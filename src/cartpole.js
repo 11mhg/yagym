@@ -20,6 +20,7 @@ class CartPole extends Environment{
     this.xThreshold=2.4;
     this.thetaThreshold= 12/ 360* 2 * Math.PI;
     this.setRandomState();
+    this.state = this.getState();
   }
 
   setRandomState(){
@@ -65,6 +66,10 @@ class CartPole extends Environment{
     return done; 
   }
 
+  reset(){
+    this.setRandomState()
+    this.state = this.getState(); 
+  }
 };
 
 
